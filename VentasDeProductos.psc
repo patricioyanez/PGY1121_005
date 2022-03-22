@@ -1,0 +1,6 @@
+Algoritmo Venta
+	
+	
+	
+	
+FinAlgoritmo
