@@ -2,7 +2,7 @@
 acumulador = 0
 contador = 1
 # 2.- SOLICITAR LOS DATOS
-# # 3.- PROCESAR LA INFO
+# 3.- PROCESAR LA INFO
 print("\n ********* Suma de numeros ********")
 while contador <= 5:
     numero = int(input("Ingrese el número:"))
