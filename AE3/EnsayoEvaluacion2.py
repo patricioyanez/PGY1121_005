@@ -1,15 +1,18 @@
 clientes = []
-rut = ""
-nombre = ""
-direccion = ""
-comuna = ""
-correo = ""
+rut = 6000000
+nombre = "Ana"
+direccion = "Americo vespucio 1501"
+comuna = "Cerrillos"
+correo = "ana@mail.com"
 edad = -1
-genero = ""
-celular =""
-tipo = ""
+genero = "F"
+celular ="546546"
+tipo = "PREMIUM"
 suscripcion = True
+fecha = "24-05-2022"
 
+cliente = [rut, nombre, direccion, comuna, correo, edad,genero,celular,tipo, suscripcion,fecha]
+clientes.append(cliente)
 opcion = 0
 
 while opcion != 4:
@@ -55,7 +58,7 @@ while opcion != 4:
                 input("Presione enter para continuar....")
                 continue
             try:
-                edad        = input("ingrese su edad         : ")            
+                edad        = int(input("ingrese su edad         : "))            
                 if edad < 0 or edad > 110:
                     raise("Edad fuera de rango")    
             except:
@@ -64,7 +67,7 @@ while opcion != 4:
                 continue
 
             genero      = input("ingrese su genero(F o M): ")
-            if genero != "F" or genero != "M":
+            if genero != 'F' and genero != 'M':
                 print("Genero no válido")
                 input("Presione enter para continuar....")
                 continue
@@ -110,5 +113,35 @@ while opcion != 4:
 
         elif opcion == 3:
             print("opción seleccionada es 3")
-        
+            try:
+                rut = int(input("ingrese su rut          : "))
+
+                if rut < 5000000 or rut > 99999999:
+                    raise("Rut fuera de rango")    
+            except:
+                print("Rut no válido")
+                input("Presione enter para continuar....")
+                continue
+            
+            clienteEncontrado = []
+            for cliente in clientes:
+                if cliente[0] == rut:
+                    clienteEncontrado = cliente
+                    break
+            
+            if len(clienteEncontrado) == 0:
+                print("Rut de cliente no encontrado")
+            else:
+                print("\n==== Datos del usuario encontrado ====")
+                print("Rut              :", clienteEncontrado[0])
+                print("Nombre           :", clienteEncontrado[1])
+                print("Dirección        :", clienteEncontrado[2])
+                print("Comuna           :", clienteEncontrado[3])
+                print("Correo           :", clienteEncontrado[4])
+                print("Edad             :", clienteEncontrado[5])
+                print("Genero           :", clienteEncontrado[6])
+                print("Celular          :", clienteEncontrado[7])
+                print("Tipo             :", clienteEncontrado[8])
+                print("Fecha Suscripción:", clienteEncontrado[10])
+
         input("Presione enter para continuar....")
