@@ -1,4 +1,4 @@
-listadoCliente = []
+clientes = []
 rut = ""
 nombre = ""
 direccion = ""
@@ -25,7 +25,6 @@ while opcion != 4:
         print("La opción no es correcta.")
         input("Presione enter para continuar....")
         continue
-
     
     if opcion < 1 or opcion > 4:
         print("La opción no es válida.")
@@ -73,20 +72,42 @@ while opcion != 4:
             celular     = input("ingrese su celular      : ")
             tipo        = input("ingrese su tipo: 1.-PREMIUM 2.-GOLD 3.-SILVER:")
             
-            tipoSeleccionado = ""
             if tipo == "1":
-                tipoSeleccionado = "PREMIUM"
+                tipo = "PREMIUM"
             elif tipo == "2":
-                tipoSeleccionado = "GOLD"
+                tipo = "GOLD"
             elif tipo == "3":
-                tipoSeleccionado = "SILVER"
+                tipo = "SILVER"
             else:
                 print("Tipo no válido")
                 input("Presione enter para continuar....")
                 continue
+            cliente = [rut, nombre, direccion, comuna, correo, edad,genero,celular,tipo, suscripcion]
+
+            clientes.append(cliente)
 
         elif opcion == 2:
             print("opción seleccionada es 2")
+            try:
+                rut = int(input("ingrese su rut          : "))
+
+                if rut < 5000000 or rut > 99999999:
+                    raise("Rut fuera de rango")    
+            except:
+                print("Rut no válido")
+                input("Presione enter para continuar....")
+                continue
+            
+            fueEncontrado = False
+            for cliente in clientes:
+                if cliente[0] == rut:
+                    cliente.append("24-05-2022")
+                    fueEncontrado = True
+                    break
+            
+            if not fueEncontrado:
+                print("Rut de cliente no encontrado")
+
         elif opcion == 3:
             print("opción seleccionada es 3")
         
