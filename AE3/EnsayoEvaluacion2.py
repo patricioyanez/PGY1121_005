@@ -37,14 +37,40 @@ while opcion != 4:
         if opcion == 1:
             print("opción seleccionada es 1")
 
-            rut         = input("ingrese su rut         : ")
-            nombre      = input("ingrese su nombre      : ")
-            direccion   = input("ingrese su direccion   : ")
-            comuna      = input("ingrese su comuna      : ")
-            correo      = input("ingrese su correo      : ")
-            edad        = input("ingrese su edad        : ")
-            genero      = input("ingrese su genero      : ")
-            celular     = input("ingrese su celular     : ")
+            try:
+                rut = int(input("ingrese su rut          : "))
+
+                if rut < 5000000 or rut > 99999999:
+                    raise("Rut fuera de rango")    
+            except:
+                print("Rut no válido")
+                input("Presione enter para continuar....")
+                continue
+
+            nombre      = input("ingrese su nombre       : ")
+            direccion   = input("ingrese su direccion    : ")
+            comuna      = input("ingrese su comuna       : ")
+            correo      = input("ingrese su correo       : ")
+            if correo.find("@") == -1:
+                print("Correo no válido")
+                input("Presione enter para continuar....")
+                continue
+            try:
+                edad        = input("ingrese su edad         : ")            
+                if edad < 0 or edad > 110:
+                    raise("Edad fuera de rango")    
+            except:
+                print("Edad no válido")
+                input("Presione enter para continuar....")
+                continue
+
+            genero      = input("ingrese su genero(F o M): ")
+            if genero != "F" or genero != "M":
+                print("Genero no válido")
+                input("Presione enter para continuar....")
+                continue
+
+            celular     = input("ingrese su celular      : ")
             tipo        = input("ingrese su tipo: 1.-PREMIUM 2.-GOLD 3.-SILVER:")
             
             tipoSeleccionado = ""
@@ -55,6 +81,8 @@ while opcion != 4:
             elif tipo == "3":
                 tipoSeleccionado = "SILVER"
             else:
+                print("Tipo no válido")
+                input("Presione enter para continuar....")
                 continue
 
         elif opcion == 2:
