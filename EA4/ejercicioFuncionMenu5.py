@@ -5,7 +5,35 @@ casillero = nu.array([["","",""],["","",""],["","",""]])
 
 # 0.-  definir funciones
 def arrendar(casillero):
-    pass
+    print("*** Arrendar casillero ****")
+    print("Ingrese nivel del casillero")
+    print("Nivel 1. $10000")
+    print("Nivel 2. $5000")
+    print("Nivel 3. $2000")
+    opcion = 0
+    try:
+        opcion = int(input("Ingrese opción:"))
+        fila = opcion - 1
+        mostrarCasillerosFila(casillero, fila)
+        nroCasillero = int(input("ingrese casillero a utilizar"))
+        columna = nroCasillero - 1
+        nombre = input("Ingrese su nombre para la reserva:")
+        casillero[fila, columna] = nombre
+    except:
+        print("Error en el ingreso de opción")
+        input("Presione enter para volver al menú")
+        return
+
+def mostrarCasillerosFila(casillero, fila):
+    nroCasillero = 1
+    listado = ""
+    print("Casilleros disponible en la fila:", fila+1)
+    for columna in casillero[fila]:
+        if columna == "":
+            listado += str(nroCasillero) + "\n"
+        nroCasillero+=1
+    print(listado)
+
 def mostrarDisponible(casillero):
     pass
 def mostrarClientes(casillero):
