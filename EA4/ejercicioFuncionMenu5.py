@@ -13,7 +13,6 @@ def mostrarClientes(casillero):
 def mostrarGanancias(casillero):
     pass
 
-
 # 1.- DEFINIR VARIABLES
 filaCasillero = -1 # precio segun la fila seleccionada
 posicionCasillero = -1 # posición dentro de la fila del 1 al 3 (restar 1 para indice)
