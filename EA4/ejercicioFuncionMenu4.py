@@ -1,3 +1,15 @@
+# 0.- definir las funciones
+def sumar(num1, num2):
+    return num1 + num2
+def restar(num1, num2):
+    return num1 - num2
+def dividir(num1, num2):
+    if num2 == 0:
+        return "No se puede dividir por cero"
+    return num1 // num2
+def multiplicar(num1, num2):
+    return num1 * num2
+
 # 1.- DEFINIR VARIABLES
 num1 = 0
 num2 = 0
@@ -32,7 +44,6 @@ while opcion != "5":
         elif opcion == "4":
             resultado = multiplicar(num1, num2)
 
-        if resultado != None:
-            print(resultado)
+        print("El resultado es:", resultado)
+        input("presione enter para continuar...")
     
-
