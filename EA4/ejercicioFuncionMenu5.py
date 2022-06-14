@@ -29,13 +29,28 @@ def mostrarCasillerosFila(casillero, fila):
     listado = ""
     print("Casilleros disponible en la fila:", fila+1)
     for columna in casillero[fila]:
-        if columna == "":
+        if columna == "": # si no hay nombres esta desocupado
             listado += str(nroCasillero) + "\n"
         nroCasillero+=1
     print(listado)
 
 def mostrarDisponible(casillero):
-    pass
+    print("Disponibilidad de los casilleros")
+    listado = ""
+    nroCasillero = 1
+    valor = ""    
+    for fila in casillero:
+        for columna in fila:
+            if columna != "":
+                valor = "x"
+            else:
+                valor = nroCasillero
+            listado += str(valor) + " "
+            nroCasillero += 1
+        listado += "\n"
+    print(listado)
+    input("Presione enter para volver al menú...")
+
 def mostrarClientes(casillero):
     pass
 def mostrarGanancias(casillero):
