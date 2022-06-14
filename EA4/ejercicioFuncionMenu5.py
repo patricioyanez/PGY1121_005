@@ -1,7 +1,7 @@
 # usar cmd para instalar numpy
 # pip install numpy
 import numpy as nu
-casillero = nu.array([["","",""],["","",""],["","",""]])
+casillero = nu.array([["","",""],["","",""],["","",""]], dtype=object)
 
 # 0.-  definir funciones
 def arrendar(casillero):
