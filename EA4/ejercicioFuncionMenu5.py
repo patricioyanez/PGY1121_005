@@ -10,7 +10,6 @@ def arrendar(casillero):
     print("Nivel 1. $10000")
     print("Nivel 2. $5000")
     print("Nivel 3. $2000")
-    opcion = 0
     try:
         opcion = int(input("Ingrese opción:"))
         fila = opcion - 1
@@ -18,7 +17,9 @@ def arrendar(casillero):
         nroCasillero = int(input("ingrese casillero a utilizar"))
         columna = nroCasillero - 1
         nombre = input("Ingrese su nombre para la reserva:")
-        casillero[fila, columna] = nombre
+        casillero[fila,columna] = '100000'
+        print(casillero)
+        input("Ingrese su nombre para la reserva:")
     except:
         print("Error en el ingreso de opción")
         input("Presione enter para volver al menú")
@@ -44,15 +45,27 @@ def mostrarDisponible(casillero):
             if columna != "":
                 valor = "X"
             else:
-                valor = nroCasillero
-            listado += str(valor) + " "
+                valor = str(nroCasillero) 
+            listado += valor + " "
             nroCasillero += 1
         listado += "\n"
     print(listado)
     input("Presione enter para volver al menú...")
 
 def mostrarClientes(casillero):
-    pass
+    print("Clientes de los casilleros")
+    listado = ""
+    fil = 1
+    for fila in casillero:
+        col = 1
+        for columna in fila:
+ #           if columna != "":
+            print(f"nombre: {columna} casillero: ",fil, col)
+            col += 1
+        fil += 1
+    input("Presione enter para volver al menú...")
+
+    
 def mostrarGanancias(casillero):
     pass
 
