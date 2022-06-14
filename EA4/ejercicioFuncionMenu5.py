@@ -42,7 +42,7 @@ def mostrarDisponible(casillero):
     for fila in casillero:
         for columna in fila:
             if columna != "":
-                valor = "x"
+                valor = "X"
             else:
                 valor = nroCasillero
             listado += str(valor) + " "
