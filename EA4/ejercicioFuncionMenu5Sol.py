@@ -54,19 +54,30 @@ def mostrarDisponible(casillero):
 def mostrarClientes(casillero):
     print("Clientes de los casilleros")
     listado = ""
-    fil = 1
+    nroCasillero = 1
     for fila in casillero:
-        col = 1
         for columna in fila:
  #           if columna != "":
-            print(f"nombre: {columna} casillero: ",fil, col)
-            col += 1
-        fil += 1
+            print("casillero: ", nroCasillero, "nombre:", columna)
+            nroCasillero += 1
     input("Presione enter para volver al menú...")
 
     
 def mostrarGanancias(casillero):
-    pass
+    total = 0
+    fil = 1
+    for fila in casillero:
+        for columna in fila:
+            if columna != "":
+                if fil == 1:
+                    total += 10000
+                elif fil == 2:
+                    total += 5000
+                elif fil == 3:
+                    total += 2000            
+        fil += 1
+    print("Total de ganancias:", total)
+    input("Presione enter para volver al menú...")
 
 # 1.- DEFINIR VARIABLES
 filaCasillero = -1 # precio segun la fila seleccionada
